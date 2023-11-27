@@ -1,0 +1,165 @@
+$primary-color: #304de5;
+$primary-darker: rgb(19, 44, 167);
+$secondary-color: #1c1b21;
+$paragraph-color: #706e7e;
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //   overflow: hidden;
+}
+.app {
+}
+.main-logo {
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 91px;
+  width: 1920px;
+}
+.navbar-links-container {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+
+  color: $secondary-color;
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.navbar-user-container {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  color: $secondary-color;
+  #navbar-icon {
+    font-size: 22px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+.contact-btn-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: background-color;
+
+  button {
+    display: inline-block;
+    background-color: $primary-color;
+    height: 100%;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-darker;
+      transition: 0.3s;
+    }
+  }
+}
+
+.hero {
+  height: 859px;
+  width: 100%;
+  background-image: url("../public/assets/hero-bg.png");
+  display: flex;
+
+  background-repeat: no-repeat;
+}
+.hero-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  //   gap: 20px;
+  top: 0 -91px;
+  left: 0;
+  width: 1920px;
+  height: 859px;
+  background-color: rgba(0, 0, 0, 0.5);
+  h2 {
+    font-size: 72px;
+    font-weight: lighter;
+    margin-bottom: 16px;
+  }
+  p {
+    margin-bottom: 16px;
+  }
+}
+
+.hero-text {
+  color: #fff;
+  .btn-primary {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+
+    svg {
+      font-size: 24px;
+    }
+  }
+  .hero-arrows-container {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 759px;
+  height: 570px;
+  .hero-right-text {
+    position: relative;
+    bottom: -140px;
+    right: 100px;
+    p {
+      width: 327px;
+      height: 80px;
+      color: $paragraph-color;
+    }
+    #hero-h3 {
+      color: $primary-color;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-weight: normal;
+      margin-bottom: 16px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+  img {
+    position: relative;
+    left: -100px;
+    width: 516px;
+  }
+}
