@@ -7,15 +7,47 @@ $paragraph-color: #706e7e;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   //   overflow: hidden;
 }
-.app {
+
+.btn-primary {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: $primary-color;
+  border: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+
+  svg {
+    font-size: 24px;
+  }
+}
+.btn-secondary {
+  @extend .btn-primary;
+
+  color: $primary-color;
+  background-color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+
+  svg {
+    font-size: 24px;
+  }
 }
 .main-logo {
   display: flex;
   align-items: center;
+  //   width: 1920px;
 }
 .navbar {
+  padding: 0 120px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -28,6 +60,7 @@ $paragraph-color: #706e7e;
   justify-content: space-between;
 
   color: $secondary-color;
+
   a {
     text-decoration: none;
     font-size: 18px;
@@ -73,93 +106,218 @@ $paragraph-color: #706e7e;
 }
 
 .hero {
-  height: 859px;
+  //   position: absolute;
+  //   height: 859px;
+
   width: 100%;
   background-image: url("../public/assets/hero-bg.png");
-  display: flex;
+  //   display: flex;
 
   background-repeat: no-repeat;
-}
-.hero-overlay {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  //   gap: 20px;
-  top: 0 -91px;
-  left: 0;
-  width: 1920px;
-  height: 859px;
-  background-color: rgba(0, 0, 0, 0.5);
-  h2 {
-    font-size: 72px;
-    font-weight: lighter;
-    margin-bottom: 16px;
-  }
-  p {
-    margin-bottom: 16px;
-  }
-}
 
-.hero-text {
-  color: #fff;
-  .btn-primary {
-    gap: 8px;
+  .hero-footer {
+    position: relative;
+    left: 201px;
+    width: 1518px;
+    height: 80px;
+    // margin: 0 auto;
+    background-color: $primary-color;
+    z-index: 1;
     display: flex;
+    top: -80px;
+    justify-content: space-around;
     align-items: center;
     color: #fff;
-    background-color: $primary-color;
-    border: none;
-    font-size: 16px;
-    padding: 8px 16px;
-    margin-bottom: 16px;
-
-    svg {
-      font-size: 24px;
-    }
-  }
-  .hero-arrows-container {
-    display: flex;
-    gap: 8px;
-  }
-}
-
-.hero-right {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  width: 759px;
-  height: 570px;
-  .hero-right-text {
-    position: relative;
-    bottom: -140px;
-    right: 100px;
-    p {
-      width: 327px;
-      height: 80px;
-      color: $paragraph-color;
-    }
-    #hero-h3 {
-      color: $primary-color;
-      font-weight: normal;
-      margin-bottom: 12px;
-    }
-    h3 {
-      font-weight: normal;
-      margin-bottom: 16px;
+    .hero-footer-component {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .hero-footer-content {
+        position: relative;
+        top: -11px;
+      }
     }
 
     a {
       display: flex;
       align-items: center;
       gap: 8px;
+      color: #fff;
       text-decoration: none;
-      color: $primary-color;
+    }
+
+    h3 {
+      font-weight: 400;
+    }
+
+    .footer-icon-container {
+      position: relative;
+      top: -25px;
+      right: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
     }
   }
-  img {
+
+  .hero-overlay {
+    //   position: absolute;
+    padding: 0 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    //   gap: 20px;
+    top: 0 -91px;
+    left: 0;
+    width: 1920px;
+    height: 859px;
+    background-color: rgba(0, 0, 0, 0.7);
+    h2 {
+      font-size: 72px;
+      font-weight: lighter;
+      margin-bottom: 16px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+  }
+
+  .hero-text {
+    color: #fff;
+
+    .hero-arrows-container {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    width: 759px;
+    height: 570px;
+    #swirl-hero {
+      position: relative;
+      opacity: 0.1;
+      left: 245px;
+    }
+    #window-hero {
+      position: relative;
+      top: -77px;
+    }
+    .hero-right-text {
+      position: relative;
+      bottom: -140px;
+      right: 100px;
+      p {
+        width: 327px;
+        height: 80px;
+        color: $paragraph-color;
+      }
+      #hero-h3 {
+        color: $primary-color;
+        font-weight: normal;
+        margin-bottom: 12px;
+      }
+      h3 {
+        font-weight: normal;
+        margin-bottom: 16px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+    img {
+      position: relative;
+      left: -100px;
+      width: 516px;
+    }
+  }
+  .hero-extended {
+    width: 1920px;
+
+    margin-top: 80px;
+    margin-bottom: 100px;
+    padding: 0 200px;
+    display: flex;
+    justify-content: space-between;
+    h2 {
+      font-size: 50px;
+      font-weight: normal;
+    }
+  }
+  .hero-extended-paragraph-container {
+    width: 1002px;
+    display: flex;
+    flex-direction: column;
+    color: $paragraph-color;
+    gap: 30px;
+    button {
+      width: 146px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+.carousel-page {
+  .big-blue {
     position: relative;
-    left: -100px;
-    width: 516px;
+    display: flex;
+    background-color: $primary-color;
+
+    left: 615px;
+    width: 1305px;
+    height: 1642px;
+  }
+  .carousel-container-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    color: #fff;
+    height: 690px;
+    .carousel-top-text {
+      position: relative;
+      right: 200px;
+    }
+    h2 {
+      font-size: 50px;
+      font-weight: normal;
+    }
+    p {
+      line-height: 28px;
+    }
+    img {
+      position: relative;
+      right: 400px;
+      width: 690px;
+      height: 700px;
+    }
+  }
+  .carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 1920px;
+    .image-container {
+      position: relative;
+      bottom: 700px;
+      display: flex;
+      width: 930px;
+      height: 550px;
+    }
   }
 }
