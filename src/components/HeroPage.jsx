@@ -50,7 +50,10 @@ function HeroPage() {
             </div>
             <div className="hero-footer-content">
               <a href="#">
-                Assortiment <FaArrowRight />
+                Assortiment{" "}
+                <span>
+                  <FaArrowRight />
+                </span>
               </a>
             </div>
           </div>

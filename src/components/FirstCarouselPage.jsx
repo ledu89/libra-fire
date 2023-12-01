@@ -1,4 +1,4 @@
-import { Carousel } from "antd";
+import { useEffect, useState } from "react";
 
 const photos = [
   "../assets/image1.png",
@@ -7,6 +7,13 @@ const photos = [
 ];
 
 function FirstCarouselPage() {
+  const [images, setImages] = useState(photos);
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const lastIndex = images.length - 1;
+    if (index < 0) setIndex(lastIndex);
+    if (index > lastIndex) setIndex(0);
+  }, [index, images]);
   return (
     <>
       <div className="big-blue">
@@ -29,15 +36,54 @@ function FirstCarouselPage() {
           </div>
         </div>
         <div className="carousel-container">
-          <img src="../assets/image1.png" alt="slide1" />
+          {images.map((image, imageIndex) => {
+            // let position = "next";
+            // if (imageIndex === index) {
+            //   position = "active";
+            // }
 
-          <img src="../assets/image2.png" className="active" alt="slide1" />
+            // if (imageIndex === index - 1) {
+            //   position = "previous";
+            // }
+            // if (imageIndex === index + 1) {
+            //   position = "next";
+            // }
+            let position = "previous";
+            if (imageIndex === index) {
+              position = "active";
+            }
+            if (imageIndex === (index - 1 + images.length) % images.length) {
+              position = "next";
+            }
+            if (imageIndex === (index + 1) % images.length) {
+              position = "previous";
+            }
 
-          <img src="../assets/image3.png" alt="slide1" className="next" />
+            return (
+              <img src={image} className={position} alt="" key={imageIndex} />
+            );
+          })}
+          {/* <img src="../assets/image1.png" alt="slide1" />
+
+          <img src="../assets/image2.png" alt="slide1" />
+
+          <img src="../assets/image3.png" alt="slide1" /> */}
         </div>
         <div className="carousel-btn-container">
-          <img src="../assets/Group_34.png" alt="left" />
-          <img src="../assets/Group_35.png" alt="left" />
+          <img
+            src="../assets/Group_34.png"
+            alt="left"
+            onClick={() => {
+              setIndex(index - 1);
+            }}
+          />
+          <img
+            src="../assets/Group_35.png"
+            alt="left"
+            onClick={() => {
+              setIndex(index + 1);
+            }}
+          />
         </div>
       </div>
     </>

@@ -11,7 +11,7 @@ import SubFooter from "./components/SubFooter";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Navbar />
       <HeroPage />
       <FirstCarouselPage />
@@ -21,7 +21,7 @@ function App() {
       <PageSeven />
       <FooterPage />
       <SubFooter />
-    </>
+    </div>
   );
 }
 

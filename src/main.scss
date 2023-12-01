@@ -12,6 +12,23 @@ $paragraph-secondary-color: #b7bfea;
 
   //   overflow: hidden;
 }
+.app {
+  width: 1920px;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  &:hover {
+    background-color: $primary-darker;
+    transition: 0.3s;
+  }
+}
+.btn-secondary {
+  &:hover {
+    background-color: #bbbcc0;
+    transition: 0.3s;
+  }
+}
 h2 {
   font-size: 50px;
   font-weight: normal;
@@ -27,6 +44,7 @@ a {
     color: $primary-color;
   }
 }
+
 .btn-primary {
   gap: 8px;
   display: flex;
@@ -68,14 +86,19 @@ a {
   justify-content: space-around;
   align-items: center;
   height: 91px;
-  // width: 1920px;
+  width: 1920px;
 }
 .navbar-links-container {
   display: flex;
   width: 450px;
   justify-content: space-between;
 
-  color: $secondary-color;
+  a {
+    color: $secondary-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
 .navbar-user-container {
@@ -117,7 +140,7 @@ a {
   //   position: absolute;
   //   height: 859px;
 
-  width: 100%;
+  width: 1920px;
   background-image: url("../public/assets/hero-bg.png");
   //   display: flex;
 
@@ -138,11 +161,16 @@ a {
     color: #fff;
     .hero-footer-component {
       display: flex;
+      position: relative;
       flex-direction: column;
       align-items: center;
       .hero-footer-content {
-        position: relative;
         top: -11px;
+        // &:hover {
+        //   span {
+        //     margin-left: 20px;
+        //   }
+        // }
       }
     }
 
@@ -159,9 +187,9 @@ a {
     }
 
     .footer-icon-container {
-      position: relative;
-      top: -25px;
-      right: 40px;
+      position: absolute;
+      top: -45px;
+      left: 0px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -261,7 +289,7 @@ a {
     }
   }
   .hero-extended {
-    // width: 1920px;
+    width: 1920px;
 
     margin-top: 80px;
     margin-bottom: 100px;
@@ -317,12 +345,29 @@ a {
     }
   }
   .carousel-container {
-    width: 100%;
+    width: 1920px;
     position: relative;
     display: flex;
+    align-items: center;
     gap: 2rem;
     width: 1920px;
     transform: translateX(-782px);
+    transition: all 0.3s;
+    .active {
+      transition: all 0.3s;
+      position: absolute;
+      left: 50%;
+    }
+    .previous {
+      transition: all 0.3s;
+      position: absolute;
+      left: 100%;
+    }
+    .next {
+      transition: all 0.3s;
+      position: absolute;
+      left: 0;
+    }
     // left: 0;
   }
   .carousel-btn-container {
@@ -338,8 +383,9 @@ a {
     }
   }
 }
+
 .page-four {
-  // width: 1920px;
+  width: 1920px;
   margin-top: 100px;
   margin-bottom: 100px;
   display: flex;
@@ -386,27 +432,50 @@ a {
     align-items: center;
     width: 1920px;
     height: 876px;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.92);
     .carousel-items {
       display: flex;
       align-items: center;
-
       gap: 30px;
+      position: relative;
+      width: 1518px;
 
       .item {
         position: relative;
         width: 486px;
         height: 525px;
         background-color: #fff;
+        transition: all 0.3s; /* Apply transition to all properties */
+
+        &.active {
+          left: 50%; /* Adjust the position for the active item */
+          transform: translateX(-50%);
+          position: relative;
+        }
+
+        &.previous {
+          right: 0; /* Position previous item off-screen to the left */
+          position: absolute;
+        }
+
+        &.next {
+          left: 0; /* Position next item off-screen to the right */
+          position: absolute;
+        }
+
         .item-text-container {
           padding: 0 20px;
+
           h3 {
             font-weight: 600;
           }
+
           p {
             color: $paragraph-color;
             width: 426px;
           }
+
           a {
             position: absolute;
             display: flex;
@@ -427,6 +496,7 @@ a {
 }
 
 .page-six-section {
+  width: 1920px;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -674,6 +744,10 @@ a {
       a {
         font-size: 12px;
         color: $paragraph-secondary-color;
+        &:hover {
+          transition: all 0.3s;
+          color: #fff;
+        }
       }
     }
   }
