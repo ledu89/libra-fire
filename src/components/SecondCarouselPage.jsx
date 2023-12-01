@@ -76,6 +76,7 @@ function SecondCarouselPage() {
             }}
           />
         </div>
+
         <button className="btn-primary">Getuigenissen klanten</button>
       </div>
     </div>

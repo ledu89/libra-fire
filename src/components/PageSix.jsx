@@ -1,6 +1,7 @@
 function PageSix() {
   return (
     <div className="page-six-section">
+      <img id="logo-big" src="../assets/logo-big.png" alt="logo" />
       <h2>Bezoek één van onze showrooms</h2>
       <div className="page-six-container">
         <div className="page-six-item">
