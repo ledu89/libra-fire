@@ -63,7 +63,10 @@ function HeroPage() {
             </div>
             <div className="hero-footer-content">
               <a href="#">
-                Getuigenissen <FaArrowRight />
+                Getuigenissen{" "}
+                <span>
+                  <FaArrowRight />
+                </span>
               </a>
             </div>
           </div>
@@ -73,7 +76,10 @@ function HeroPage() {
             </div>
             <div className="hero-footer-content">
               <a href="#">
-                Up-To-Date <FaArrowRight />
+                Up-To-Date{" "}
+                <span>
+                  <FaArrowRight />
+                </span>
               </a>
             </div>
           </div>
@@ -83,7 +89,10 @@ function HeroPage() {
             </div>
             <div className="hero-footer-content">
               <a href="#">
-                Services <FaArrowRight />
+                Services{" "}
+                <span>
+                  <FaArrowRight />
+                </span>
               </a>
             </div>
           </div>
@@ -93,7 +102,10 @@ function HeroPage() {
             </div>
             <div className="hero-footer-content">
               <a href="#">
-                Wie zijn wij <FaArrowRight />
+                Wie zijn wij{" "}
+                <span>
+                  <FaArrowRight />
+                </span>
               </a>
             </div>
           </div>
